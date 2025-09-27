@@ -11,7 +11,11 @@ class ServiceManager {
     
     public function getAllServices() {
         try {
-            $query = "SELECT * FROM services WHERE is_active = 1 ORDER BY sort_order, title";
+            $query = "SELECT s.*, m.file_path as icon_image_path, m.alt_text as icon_image_alt
+                     FROM services s 
+                     LEFT JOIN media m ON s.icon_image = m.id 
+                     WHERE s.is_active = 1 
+                     ORDER BY s.sort_order, s.title";
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
             
@@ -72,14 +76,16 @@ class ServiceManager {
     
     public function createService($data) {
         try {
-            $query = "INSERT INTO services (title, slug, description, icon, is_active, sort_order) 
-                     VALUES (:title, :slug, :description, :icon, :is_active, :sort_order)";
+            $query = "INSERT INTO services (title, slug, description, icon, icon_image, service_link, is_active, sort_order) 
+                     VALUES (:title, :slug, :description, :icon, :icon_image, :service_link, :is_active, :sort_order)";
             
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':title', $data['title']);
             $stmt->bindParam(':slug', $data['slug']);
             $stmt->bindParam(':description', $data['description']);
             $stmt->bindParam(':icon', $data['icon']);
+            $stmt->bindParam(':icon_image', $data['icon_image']);
+            $stmt->bindParam(':service_link', $data['service_link']);
             $stmt->bindParam(':is_active', $data['is_active']);
             $stmt->bindParam(':sort_order', $data['sort_order']);
             
@@ -96,7 +102,8 @@ class ServiceManager {
         try {
             $query = "UPDATE services SET 
                      title = :title, slug = :slug, description = :description, 
-                     icon = :icon, is_active = :is_active, sort_order = :sort_order 
+                     icon = :icon, icon_image = :icon_image, service_link = :service_link, 
+                     is_active = :is_active, sort_order = :sort_order 
                      WHERE id = :id";
             
             $stmt = $this->conn->prepare($query);
@@ -105,6 +112,8 @@ class ServiceManager {
             $stmt->bindParam(':slug', $data['slug']);
             $stmt->bindParam(':description', $data['description']);
             $stmt->bindParam(':icon', $data['icon']);
+            $stmt->bindParam(':icon_image', $data['icon_image']);
+            $stmt->bindParam(':service_link', $data['service_link']);
             $stmt->bindParam(':is_active', $data['is_active']);
             $stmt->bindParam(':sort_order', $data['sort_order']);
             

@@ -120,7 +120,13 @@ class SettingsManager {
             $this->conn->beginTransaction();
             
             foreach ($settings as $key => $value) {
-                $this->updateSetting($key, $value);
+                // Check if setting exists, if not create it
+                $existing = $this->getSetting($key);
+                if ($existing === null) {
+                    $this->createSetting($key, $value, 'text', 'general', '');
+                } else {
+                    $this->updateSetting($key, $value);
+                }
             }
             
             $this->conn->commit();
@@ -158,6 +164,28 @@ class SettingsManager {
     
     public function getIntegrationSettings() {
         return $this->getAllSettings('integrations');
+    }
+    
+    public function getLandingPageSettings() {
+        return $this->getAllSettings('landing');
+    }
+    
+    public function updateLandingPageSettings($data) {
+        $landing_keys = [
+            'landing_background_image',
+            'landing_overlay_opacity',
+            'intro_video_url',
+            'show_intro_button'
+        ];
+        
+        $settings_to_update = [];
+        foreach ($landing_keys as $key) {
+            if (isset($data[$key])) {
+                $settings_to_update[$key] = $data[$key];
+            }
+        }
+        
+        return $this->updateMultipleSettings($settings_to_update);
     }
     
     public function updateIntegrationSettings($data) {
