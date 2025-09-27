@@ -184,6 +184,140 @@ const services = [
         ]
       }
     ]
+  },
+  {
+    title: "Social Media Graphics",
+    subtitle: "Engaging Visual Content",
+    description: "Create scroll-stopping graphics for all your social media platforms.",
+    icon: "📱",
+    packages: [
+      {
+        name: "Basic Pack",
+        price: "Starting at $99",
+        timeline: "2-3 days",
+        features: [
+          "5 Social media posts",
+          "Instagram story templates",
+          "Basic animations",
+          "2 Revisions included"
+        ]
+      },
+      {
+        name: "Growth Pack",
+        price: "Starting at $199",
+        timeline: "3-5 days",
+        features: [
+          "15 Social media posts",
+          "Story & highlight covers",
+          "Animated versions",
+          "Platform optimization",
+          "Content calendar template"
+        ],
+        popular: true
+      },
+      {
+        name: "Enterprise Pack",
+        price: "Starting at $399",
+        timeline: "5-7 days",
+        features: [
+          "30 Social media posts",
+          "Complete template library",
+          "Video content creation",
+          "Brand guidelines",
+          "Monthly content strategy"
+        ]
+      }
+    ]
+  },
+  {
+    title: "Website Design",
+    subtitle: "Modern Web Experiences",
+    description: "Responsive websites that look amazing and convert visitors into customers.",
+    icon: "💻",
+    packages: [
+      {
+        name: "Landing Page",
+        price: "Starting at $799",
+        timeline: "7-10 days",
+        features: [
+          "Single page design",
+          "Mobile responsive",
+          "Contact form integration",
+          "SEO optimization"
+        ]
+      },
+      {
+        name: "Business Website",
+        price: "Starting at $1,499",
+        timeline: "10-14 days",
+        features: [
+          "Up to 5 pages",
+          "Custom design system",
+          "CMS integration",
+          "Advanced SEO",
+          "Analytics setup",
+          "Performance optimization"
+        ],
+        popular: true
+      },
+      {
+        name: "E-commerce Site",
+        price: "Starting at $2,999",
+        timeline: "14-21 days",
+        features: [
+          "Full e-commerce platform",
+          "Product catalog design",
+          "Payment integration",
+          "Inventory management",
+          "Marketing automation",
+          "Ongoing support"
+        ]
+      }
+    ]
+  },
+  {
+    title: "Motion Graphics & Animation",
+    subtitle: "Bring Your Brand to Life",
+    description: "Professional animations and motion graphics that captivate your audience.",
+    icon: "🎭",
+    packages: [
+      {
+        name: "Basic Animation",
+        price: "Starting at $199",
+        timeline: "3-5 days",
+        features: [
+          "Logo animation",
+          "Simple transitions",
+          "Basic motion graphics",
+          "HD export"
+        ]
+      },
+      {
+        name: "Professional Package",
+        price: "Starting at $499",
+        timeline: "5-7 days",
+        features: [
+          "Custom intro/outro",
+          "Advanced animations",
+          "Sound design",
+          "Multiple format exports",
+          "Revision rounds"
+        ],
+        popular: true
+      },
+      {
+        name: "Premium Production",
+        price: "Starting at $999",
+        timeline: "7-14 days",
+        features: [
+          "Complex motion graphics",
+          "3D elements",
+          "Professional sound design",
+          "Multiple video lengths",
+          "Source files included"
+        ]
+      }
+    ]
   }
 ]
 

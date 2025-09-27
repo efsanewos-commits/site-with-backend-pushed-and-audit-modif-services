@@ -64,6 +64,51 @@ export function DynamicServicesSlider({
           service_link: "/services#video",
           sort_order: 3,
           is_active: true
+        },
+        {
+          id: 4,
+          title: "YouTube Channel Setup",
+          description: "Complete channel branding and optimization for growth",
+          icon: "🚀",
+          service_link: "/services#youtube-branding",
+          sort_order: 4,
+          is_active: true
+        },
+        {
+          id: 5,
+          title: "Complete Branding",
+          description: "Full brand identity packages for businesses",
+          icon: "✨",
+          service_link: "/services#branding",
+          sort_order: 5,
+          is_active: true
+        },
+        {
+          id: 6,
+          title: "Social Media Graphics",
+          description: "Eye-catching graphics for all your social platforms",
+          icon: "📱",
+          service_link: "/services#social-media",
+          sort_order: 6,
+          is_active: true
+        },
+        {
+          id: 7,
+          title: "Website Design",
+          description: "Modern, responsive websites that convert visitors",
+          icon: "💻",
+          service_link: "/services#website",
+          sort_order: 7,
+          is_active: true
+        },
+        {
+          id: 8,
+          title: "Motion Graphics",
+          description: "Animated graphics and intros for professional videos",
+          icon: "🎭",
+          service_link: "/services#motion",
+          sort_order: 8,
+          is_active: true
         }
       ])
     } catch (error) {
