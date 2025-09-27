@@ -36,16 +36,7 @@ export function DynamicServicesSlider({
   
   const fetchServices = async () => {
     try {
-      // In production, this would fetch from your backend API
-      const response = await fetch('/backend/api/services')
-      const data = await response.json()
-      
-      if (data.services) {
-        setServices(data.services.filter((service: Service) => service.is_active))
-      }
-    } catch (error) {
-      console.error('Error fetching services:', error)
-      // Fallback to default services
+      // Using default services since backend is not available in this environment
       setServices([
         {
           id: 1,
@@ -75,6 +66,9 @@ export function DynamicServicesSlider({
           is_active: true
         }
       ])
+    } catch (error) {
+      console.error('Error setting up services:', error)
+      setServices([])
     } finally {
       setIsLoading(false)
     }
