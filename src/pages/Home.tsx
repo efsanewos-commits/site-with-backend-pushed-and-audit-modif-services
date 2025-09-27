@@ -7,6 +7,7 @@ import { LeadMagnet } from "@/components/lead-magnet"
 import { PricingEstimator } from "@/components/pricing-estimator"
 import { CalendlyBooking } from "@/components/calendly-booking"
 import { SEOHead } from "@/components/seo-head"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
   return (
