@@ -1,4 +1,4 @@
-import { CheckCircle, Clock, Zap, RefreshCw } from "lucide-react"
+import { CircleCheck as CheckCircle, Clock, Zap, RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SEOHead } from "@/components/seo-head"
 
