@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Palette, Play, Zap, CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
+import { Palette, Play, Zap, CircleCheck as CheckCircle, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
